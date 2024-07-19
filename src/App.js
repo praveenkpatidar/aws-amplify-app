@@ -9,9 +9,7 @@ import PredictionsCard from './components/PredictionsCard'
 import AboutCard from './components/AboutCard'
 import { Hub } from '@aws-amplify/core';
 import { Grid } from '@mui/material'
-import {
-  withAuthenticator,
-} from "@aws-amplify/ui-react";
+import { withAuthenticator } from "@aws-amplify/ui-react";
 
 
 function App() {
@@ -41,7 +39,7 @@ function App() {
         <Grid container spacing={3}>
 
           <AboutCard
-            text="This is an application I made during CCA x CISSA's AWS event!"
+            text="welcome to the Application. This is Free Contents."
           />
 
           <AddItemCard
@@ -83,7 +81,9 @@ function App() {
               }
             }}
           />
+
         </Grid>
+
       </div>
     </div>
   );

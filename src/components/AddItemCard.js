@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../App.css';
 import { TextField, Button, Grid, Paper } from '@mui/material';
-
 const NavBar = ({
   addAction
 }) => {
