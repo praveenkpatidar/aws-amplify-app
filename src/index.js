@@ -5,7 +5,6 @@ import App from './App';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import * as serviceWorker from './serviceWorker';
 import CssBaseline from "@mui/material/CssBaseline";
-import { AmplifyAuthenticator } from '@aws-amplify/ui-react';
 import { Amplify } from 'aws-amplify';
 import config from './aws-exports'
 Amplify.configure(config)
@@ -28,9 +27,7 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <AmplifyAuthenticator>
-        <App />
-      </AmplifyAuthenticator>
+      <App />
     </ThemeProvider>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-
+import "@aws-amplify/ui-react/styles.css";
 import { getUserItems, deleteItem, addItem } from './api/db'
 import TableCard from './components/TableCard'
 import NavBar from './components/NavBar'
@@ -9,6 +9,9 @@ import PredictionsCard from './components/PredictionsCard'
 import AboutCard from './components/AboutCard'
 import { Hub } from '@aws-amplify/core';
 import { Grid } from '@mui/material'
+import {
+  withAuthenticator,
+} from "@aws-amplify/ui-react";
 
 
 function App() {
@@ -85,5 +88,4 @@ function App() {
     </div>
   );
 }
-
-export default App;
+export default withAuthenticator(App);
