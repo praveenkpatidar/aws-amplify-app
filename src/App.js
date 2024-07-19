@@ -25,6 +25,7 @@ function App() {
     setItems(await getUserItems())
   }
 
+
   Hub.listen('auth', (data) => {
     if (data.payload.event === 'signIn') {
       fetchData()
@@ -39,7 +40,7 @@ function App() {
         <Grid container spacing={3}>
 
           <AboutCard
-            text="welcome to the Application. This is Free Contents."
+            text="This is Amplify Full Stack App"
           />
 
           <AddItemCard
