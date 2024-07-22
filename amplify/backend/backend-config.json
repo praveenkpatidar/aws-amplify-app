@@ -1,15 +1,7 @@
 {
   "api": {
-    "info": {
+    "mainApi": {
       "dependsOn": [
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "infoFunction"
-        },
         {
           "attributes": [
             "Name",
@@ -21,34 +13,6 @@
       ],
       "providerPlugin": "awscloudformation",
       "service": "API Gateway"
-    },
-    "mainApi": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "infoFunction"
-        },
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "databaseFunction"
-        },
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "taskFunction"
-        }
-      ]
     }
   },
   "auth": {
@@ -142,6 +106,22 @@
         {
           "category": "function",
           "resourceName": "infoFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_taskFunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "taskFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_taskFunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "taskFunction"
         }
       ]
     }

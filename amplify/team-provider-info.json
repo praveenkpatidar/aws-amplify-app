@@ -1,52 +1,37 @@
 {
   "main": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-awsamplifyapp-main-5bf27-authRole",
-      "UnauthRoleArn": "arn:aws:iam::354334841216:role/amplify-awsamplifyapp-main-5bf27-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::354334841216:role/amplify-awsamplifyapp-main-5bf27-authRole",
+      "AuthRoleName": "amplify-ppamplifyapp-main-e8de4-authRole",
+      "UnauthRoleArn": "arn:aws:iam::354334841216:role/amplify-ppamplifyapp-main-e8de4-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::354334841216:role/amplify-ppamplifyapp-main-e8de4-authRole",
       "Region": "ap-southeast-2",
-      "DeploymentBucketName": "amplify-awsamplifyapp-main-5bf27-deployment",
-      "UnauthRoleName": "amplify-awsamplifyapp-main-5bf27-unauthRole",
-      "StackName": "amplify-awsamplifyapp-main-5bf27",
-      "StackId": "arn:aws:cloudformation:ap-southeast-2:354334841216:stack/amplify-awsamplifyapp-main-5bf27/8a1e7a60-4578-11ef-be6b-06b83a5a6d03",
-      "AmplifyAppId": "d105378jc7qdy9",
-      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-awsamplifyapp-main-5bf27-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+      "DeploymentBucketName": "amplify-ppamplifyapp-main-e8de4-deployment",
+      "UnauthRoleName": "amplify-ppamplifyapp-main-e8de4-unauthRole",
+      "StackName": "amplify-ppamplifyapp-main-e8de4",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:354334841216:stack/amplify-ppamplifyapp-main-e8de4/6ea5f550-47fe-11ef-920c-026684f3f6a5",
+      "AmplifyAppId": "d20d66tjjxfw69"
     },
     "categories": {
       "auth": {
         "awsamplifyapp481887bd": {}
       },
       "function": {
+        "databaseFunction": {
+          "deploymentBucketName": "amplify-ppamplifyapp-main-e8de4-deployment",
+          "s3Key": "amplify-builds/databaseFunction-423373495879437a696e-build.zip"
+        },
         "infoFunction": {
-          "deploymentBucketName": "amplify-awsamplifyapp-main-5bf27-deployment",
+          "deploymentBucketName": "amplify-ppamplifyapp-main-e8de4-deployment",
           "s3Key": "amplify-builds/infoFunction-63444e794137744f444d-build.zip"
         },
-        "databaseFunction": {
-          "deploymentBucketName": "amplify-awsamplifyapp-main-5bf27-deployment",
-          "s3Key": "amplify-builds/databaseFunction-524b6268386835416e7a-build.zip"
-        },
-        "taskFunction": {}
-      },
-      "api": {
-        "info": {},
-        "mainApi": {}
+        "taskFunction": {
+          "deploymentBucketName": "amplify-ppamplifyapp-main-e8de4-deployment",
+          "s3Key": "amplify-builds/taskFunction-4c6f4956483234415742-build.zip"
+        }
       },
       "storage": {
         "items": {}
       }
-    }
-  },
-  "dev": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-awsamplifyapp-dev-1faa2-authRole",
-      "UnauthRoleArn": "arn:aws:iam::354334841216:role/amplify-awsamplifyapp-dev-1faa2-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::354334841216:role/amplify-awsamplifyapp-dev-1faa2-authRole",
-      "Region": "ap-southeast-2",
-      "DeploymentBucketName": "amplify-awsamplifyapp-dev-1faa2-deployment",
-      "UnauthRoleName": "amplify-awsamplifyapp-dev-1faa2-unauthRole",
-      "StackName": "amplify-awsamplifyapp-dev-1faa2",
-      "StackId": "arn:aws:cloudformation:ap-southeast-2:354334841216:stack/amplify-awsamplifyapp-dev-1faa2/f70acc10-4568-11ef-b028-0644baa751e9",
-      "AmplifyAppId": "d105378jc7qdy9"
     }
   }
 }
