@@ -10,6 +10,19 @@
           "read"
         ]
       }
+    },
+    "/items": {
+      "name": "/items",
+      "lambdaFunction": "databaseFunction",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
     }
   }
 }

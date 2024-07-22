@@ -9,6 +9,14 @@
           ],
           "category": "function",
           "resourceName": "infoFunction"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "databaseFunction"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -45,6 +53,25 @@
     }
   },
   "function": {
+    "databaseFunction": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributeEnvMap": {
+            "Arn": "TABLE_ARN",
+            "Name": "TABLE_NAME"
+          },
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "storage",
+          "resourceName": "items"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "infoFunction": {
       "build": true,
       "dependsOn": [],
@@ -53,6 +80,22 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_databaseFunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "databaseFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_databaseFunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "databaseFunction"
+        }
+      ]
+    },
     "AMPLIFY_function_infoFunction_deploymentBucketName": {
       "usedBy": [
         {
@@ -68,6 +111,12 @@
           "resourceName": "infoFunction"
         }
       ]
+    }
+  },
+  "storage": {
+    "items": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
     }
   }
 }

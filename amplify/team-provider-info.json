@@ -20,10 +20,17 @@
         "infoFunction": {
           "deploymentBucketName": "amplify-awsamplifyapp-main-5bf27-deployment",
           "s3Key": "amplify-builds/infoFunction-63444e794137744f444d-build.zip"
+        },
+        "databaseFunction": {
+          "deploymentBucketName": "amplify-awsamplifyapp-main-5bf27-deployment",
+          "s3Key": "amplify-builds/databaseFunction-3867755677762b644768-build.zip"
         }
       },
       "api": {
         "info": {}
+      },
+      "storage": {
+        "items": {}
       }
     }
   },
