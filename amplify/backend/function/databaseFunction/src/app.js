@@ -80,22 +80,19 @@ app.get(path, async function (req, res) {
  ************************************/
 
 app.get(path + hashKeyPath, async function (req, res) {
-  const condition = {}
-  condition[partitionKeyName] = {
-    ComparisonOperator: 'EQ'
-  }
+  let userName = "";
 
   if (userIdPresent && req.apiGateway) {
-    condition[partitionKeyName]['AttributeValueList'] = [req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH];
+    userName = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
   } else {
     try {
-      condition[partitionKeyName]['AttributeValueList'] = [convertUrlType(req.params[partitionKeyName], partitionKeyType)];
+      userName = convertUrlType(req.params[partitionKeyName], partitionKeyType);
     } catch (err) {
       res.statusCode = 500;
       res.json({ error: 'Wrong column type ' + err });
     }
   }
-
+  // Define the query parameters
   const queryParams = {
     TableName: tableName,
     ExpressionAttributeNames: {
@@ -107,8 +104,10 @@ app.get(path + hashKeyPath, async function (req, res) {
     KeyConditionExpression: "#user = :userValue",
   };
 
+  console.log("queryParams: " + JSON.stringify(queryParams, null, 2));
   try {
     const data = await ddbDocClient.send(new QueryCommand(queryParams));
+    console.log("Return Items " + JSON.stringify(data.Items, null, 2));
     res.json(data.Items);
   } catch (err) {
     res.statusCode = 500;

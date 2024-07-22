@@ -1,4 +1,4 @@
-import { get, post } from 'aws-amplify/api';
+import { get, post, del } from 'aws-amplify/api';
 import { fetchAuthSession } from 'aws-amplify/auth';
 export async function getAboutInfo() {
 }
@@ -7,14 +7,35 @@ export async function getAboutInfo() {
 export async function getUserItems() {
     try {
         const email = (await fetchAuthSession()).tokens.idToken?.payload?.email
-        console.log('token: ', email);
         const restOperation = get({
             apiName: 'info', // by mistake the APIs names as info but its main API
             path: '/items/' + email,
         });
         const response = await restOperation.response;
-        console.log('GET call succeeded: ', response.body);
-        return response;
+        console.log('GET call succeeded: ', response);
+        // Convert the response to a readable stream
+        const reader = response.body.getReader();
+        const stream = new ReadableStream({
+            start(controller) {
+                function push() {
+                    reader.read().then(({ done, value }) => {
+                        if (done) {
+                            controller.close();
+                            return;
+                        }
+                        controller.enqueue(value);
+                        push();
+                    });
+                }
+                push();
+            }
+        });
+        // Convert the stream to a text
+        const streamResponse = new Response(stream);
+        const textResponse = await streamResponse.text();
+        const jsonResponse = JSON.parse(textResponse);
+        return jsonResponse;
+        //return response;
     } catch (e) {
         console.log('GET call failed: ', e);
     }
@@ -35,12 +56,10 @@ export async function addItem(itemName) {
                 }
             }
         });
-
         const { body } = await restOperation.response;
         const response = await body.json();
-
-        console.log('POST call succeeded');
         console.log(response);
+        return response;
     } catch (e) {
         console.log('POST call failed: ', JSON.parse(e.response.body));
     }
@@ -49,5 +68,12 @@ export async function addItem(itemName) {
 
 // This function is called when a user deletes an existing item in the table
 export async function deleteItem(timestamp) {
-
+    const email = (await fetchAuthSession()).tokens.idToken?.payload?.email
+    const restOperation = del({
+        apiName: 'info', // by mistake the APIs names as info but its main API
+        path: '/items/object/' + email + '/' + timestamp,
+    });
+    const response = await restOperation.response;
+    console.log(response);
+    return response;
 }

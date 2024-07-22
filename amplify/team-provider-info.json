@@ -23,7 +23,7 @@
         },
         "databaseFunction": {
           "deploymentBucketName": "amplify-awsamplifyapp-main-5bf27-deployment",
-          "s3Key": "amplify-builds/databaseFunction-3867755677762b644768-build.zip"
+          "s3Key": "amplify-builds/databaseFunction-524b6268386835416e7a-build.zip"
         }
       },
       "api": {
