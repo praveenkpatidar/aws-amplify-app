@@ -14,27 +14,19 @@
     },
     "categories": {
       "auth": {
-        "awsamplifyapp481887bd": {}
+        "ppamplifyapp5c11be65": {}
       },
       "function": {
         "databaseFunction": {
           "deploymentBucketName": "amplify-ppamplifyapp-main-e8de4-deployment",
           "s3Key": "amplify-builds/databaseFunction-423373495879437a696e-build.zip"
-        },
-        "infoFunction": {
-          "deploymentBucketName": "amplify-ppamplifyapp-main-e8de4-deployment",
-          "s3Key": "amplify-builds/infoFunction-63444e794137744f444d-build.zip"
-        },
-        "taskFunction": {
-          "deploymentBucketName": "amplify-ppamplifyapp-main-e8de4-deployment",
-          "s3Key": "amplify-builds/taskFunction-4c6f4956483234415742-build.zip"
         }
-      },
-      "storage": {
-        "items": {}
       },
       "api": {
         "mainApi": {}
+      },
+      "storage": {
+        "items": {}
       }
     }
   }

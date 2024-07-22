@@ -42,9 +42,10 @@ export async function getUserItems() {
 }
 
 // This function is called when a user clicks the button 'Add'
-export async function addItem(itemName) {
+export async function addItem(itemName, itemDesc) {
     const email = (await fetchAuthSession()).tokens.idToken?.payload?.email
     try {
+        console.log(itemDesc);
         const restOperation = post({
             apiName: 'mainApi',
             path: '/items',
@@ -52,7 +53,8 @@ export async function addItem(itemName) {
                 body: {
                     timestamp: new Date().getTime(),
                     user: email,
-                    itemName
+                    itemName,
+                    itemDesc: itemDesc
                 }
             }
         });

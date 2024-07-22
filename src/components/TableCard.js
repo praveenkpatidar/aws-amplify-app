@@ -16,6 +16,9 @@ const TableCard = ({
             <TableHead>
               <TableRow>
                 <TableCell>Item</TableCell>
+                <TableCell >
+                  Description
+                </TableCell>
                 <TableCell>Date Created</TableCell>
                 <TableCell align="right">Actions</TableCell>
               </TableRow>
@@ -23,9 +26,12 @@ const TableCard = ({
             <TableBody>
               {data.map(item => {
                 return (
-                  <TableRow>
-                    <TableCell>
+                  <TableRow key={item.timestamp} >
+                    <TableCell >
                       {item.itemName}
+                    </TableCell>
+                    <TableCell >
+                      {item.itemDesc}
                     </TableCell>
                     <TableCell>
                       {new Intl.DateTimeFormat('en-AU', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(item.timestamp)}

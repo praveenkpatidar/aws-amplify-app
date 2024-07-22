@@ -44,13 +44,14 @@ function App() {
 
           <AddItemCard
             addAction={
-              async (itemName) => {
-                const response = await addItem(itemName)
+              async (itemName, itemDesc) => {
+                const response = await addItem(itemName, itemDesc)
 
                 if (response) {
                   setItems([...items, {
                     timestamp: new Date().getTime(),
-                    itemName
+                    itemName,
+                    itemDesc,
                   }])
                 }
 
@@ -88,4 +89,5 @@ function App() {
     </div>
   );
 }
+
 export default withAuthenticator(App);
