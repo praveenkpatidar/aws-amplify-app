@@ -11,7 +11,7 @@
     "env": {
       "Type": "String"
     },
-    "info": {
+    "mainApi": {
       "Type": "String"
     }
   },
@@ -52,7 +52,7 @@
                       },
                       ":",
                       {
-                        "Ref": "info"
+                        "Ref": "mainApi"
                       },
                       "/",
                       {
@@ -82,7 +82,7 @@
                       },
                       ":",
                       {
-                        "Ref": "info"
+                        "Ref": "mainApi"
                       },
                       "/",
                       {
@@ -112,7 +112,7 @@
                       },
                       ":",
                       {
-                        "Ref": "info"
+                        "Ref": "mainApi"
                       },
                       "/",
                       {
@@ -142,7 +142,7 @@
                       },
                       ":",
                       {
-                        "Ref": "info"
+                        "Ref": "mainApi"
                       },
                       "/",
                       {

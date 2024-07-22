@@ -8,7 +8,7 @@ export async function getUserItems() {
     try {
         const email = (await fetchAuthSession()).tokens.idToken?.payload?.email
         const restOperation = get({
-            apiName: 'info', // by mistake the APIs names as info but its main API
+            apiName: 'mainApi', // by mistake the APIs names as info but its main API
             path: '/items/' + email,
         });
         const response = await restOperation.response;
@@ -46,7 +46,7 @@ export async function addItem(itemName) {
     const email = (await fetchAuthSession()).tokens.idToken?.payload?.email
     try {
         const restOperation = post({
-            apiName: 'info',
+            apiName: 'mainApi',
             path: '/items',
             options: {
                 body: {
@@ -70,7 +70,7 @@ export async function addItem(itemName) {
 export async function deleteItem(timestamp) {
     const email = (await fetchAuthSession()).tokens.idToken?.payload?.email
     const restOperation = del({
-        apiName: 'info', // by mistake the APIs names as info but its main API
+        apiName: 'mainApi', // by mistake the APIs names as info but its main API
         path: '/items/object/' + email + '/' + timestamp,
     });
     const response = await restOperation.response;

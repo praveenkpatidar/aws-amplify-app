@@ -27,7 +27,8 @@
         }
       },
       "api": {
-        "info": {}
+        "info": {},
+        "mainApi": {}
       },
       "storage": {
         "items": {}
