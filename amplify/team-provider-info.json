@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-ppamplifyapp-main-e8de4-unauthRole",
       "StackName": "amplify-ppamplifyapp-main-e8de4",
       "StackId": "arn:aws:cloudformation:ap-southeast-2:354334841216:stack/amplify-ppamplifyapp-main-e8de4/6ea5f550-47fe-11ef-920c-026684f3f6a5",
-      "AmplifyAppId": "d20d66tjjxfw69"
+      "AmplifyAppId": "d20d66tjjxfw69",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-ppamplifyapp-main-e8de4-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
@@ -31,6 +32,9 @@
       },
       "storage": {
         "items": {}
+      },
+      "api": {
+        "mainApi": {}
       }
     }
   }
