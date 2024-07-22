@@ -1,16 +1,15 @@
 {
   "main": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-ppamplifyapp-main-e8de4-authRole",
-      "UnauthRoleArn": "arn:aws:iam::354334841216:role/amplify-ppamplifyapp-main-e8de4-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::354334841216:role/amplify-ppamplifyapp-main-e8de4-authRole",
+      "AuthRoleName": "amplify-pp1amplifyapp-main-29be3-authRole",
+      "UnauthRoleArn": "arn:aws:iam::354334841216:role/amplify-pp1amplifyapp-main-29be3-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::354334841216:role/amplify-pp1amplifyapp-main-29be3-authRole",
       "Region": "ap-southeast-2",
-      "DeploymentBucketName": "amplify-ppamplifyapp-main-e8de4-deployment",
-      "UnauthRoleName": "amplify-ppamplifyapp-main-e8de4-unauthRole",
-      "StackName": "amplify-ppamplifyapp-main-e8de4",
-      "StackId": "arn:aws:cloudformation:ap-southeast-2:354334841216:stack/amplify-ppamplifyapp-main-e8de4/6ea5f550-47fe-11ef-920c-026684f3f6a5",
-      "AmplifyAppId": "d20d66tjjxfw69",
-      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-ppamplifyapp-main-e8de4-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+      "DeploymentBucketName": "amplify-pp1amplifyapp-main-29be3-deployment",
+      "UnauthRoleName": "amplify-pp1amplifyapp-main-29be3-unauthRole",
+      "StackName": "amplify-pp1amplifyapp-main-29be3",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:354334841216:stack/amplify-pp1amplifyapp-main-29be3/96a45250-4811-11ef-9a65-02154db40deb",
+      "AmplifyAppId": "dvtq58ugt7w82"
     },
     "categories": {
       "auth": {
@@ -18,15 +17,15 @@
       },
       "function": {
         "databaseFunction": {
-          "deploymentBucketName": "amplify-ppamplifyapp-main-e8de4-deployment",
+          "deploymentBucketName": "amplify-pp1amplifyapp-main-29be3-deployment",
           "s3Key": "amplify-builds/databaseFunction-423373495879437a696e-build.zip"
         }
       },
-      "api": {
-        "mainApi": {}
-      },
       "storage": {
         "items": {}
+      },
+      "api": {
+        "mainApi": {}
       }
     }
   }
