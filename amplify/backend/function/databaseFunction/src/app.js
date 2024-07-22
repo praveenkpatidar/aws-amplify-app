@@ -96,10 +96,16 @@ app.get(path + hashKeyPath, async function (req, res) {
     }
   }
 
-  let queryParams = {
+  const queryParams = {
     TableName: tableName,
-    KeyConditions: condition
-  }
+    ExpressionAttributeNames: {
+      "#user": partitionKeyName
+    },
+    ExpressionAttributeValues: {
+      ":userValue": userName
+    },
+    KeyConditionExpression: "#user = :userValue",
+  };
 
   try {
     const data = await ddbDocClient.send(new QueryCommand(queryParams));

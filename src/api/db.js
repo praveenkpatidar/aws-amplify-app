@@ -1,19 +1,6 @@
 import { get, post } from 'aws-amplify/api';
 import { fetchAuthSession } from 'aws-amplify/auth';
 export async function getAboutInfo() {
-    try {
-        const email = (await fetchAuthSession()).tokens.idToken?.payload?.email
-        console.log('token: ', email);
-        const restOperation = get({
-            apiName: 'info', // by mistake the APIs names as info but its main API
-            path: '/info'
-        });
-        const response = await restOperation.response;
-        console.log('GET Info succeeded: ', response);
-        return response;
-    } catch (e) {
-        console.log('GET Info failed: ', e);
-    }
 }
 
 // This function is called immediately when the page loads, before populating the table with this data
@@ -26,7 +13,7 @@ export async function getUserItems() {
             path: '/items/' + email,
         });
         const response = await restOperation.response;
-        console.log('GET call succeeded: ', response);
+        console.log('GET call succeeded: ', response.body);
         return response;
     } catch (e) {
         console.log('GET call failed: ', e);
